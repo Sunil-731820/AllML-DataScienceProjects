@@ -1,1 +1,1 @@
-print("alog")
+print("algorithms")
