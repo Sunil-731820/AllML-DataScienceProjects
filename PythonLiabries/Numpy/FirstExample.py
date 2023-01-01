@@ -35,3 +35,55 @@ print("The Maximum Element of the Columns is ",b.max(axis=0))
 print("The Minimum Element of the Rows",b.min(axis=1))
 print("the Sum Of The All Rows is ",b.sum(axis=1))
 print("The Sum of The All Column is ",b.sum(axis=0))
+
+# Finding The Square Root And Deviations
+c = np.array([
+    [1,2,30],
+    [10,15,4]
+])
+print("The Numpy Array is ")
+print(c)
+print("The Square Root Of The Array is ")
+print(np.sqrt(c))
+print("The Standard Deviation is ")
+print(np.std(c))
+
+Num1 = np.array([
+    [1,2,30],
+    [10,15,4]
+])
+Num2 = np.array([
+    [1,2,3],
+    [12,19,29]
+])
+
+print("The first Numpy Array is ")
+print(Num1)
+print("The Second Numpy Array is ")
+print(Num2)
+
+print("The Sum Of The Array is ")
+print(Num1+Num2)
+print("The product of The Array is ")
+print(Num1*Num2)
+print("The Division of The Array is ")
+print(Num1/Num2)
+
+# Array Concatenation
+
+num1 = np.array([
+    [1,2,30],
+    [10,15,4]
+])
+
+num2 = np.array([
+    [1,2,3],
+    [12,19,29]
+])
+print("The Arrays Vertically Concatenated ")
+print(np.vstack((num1,num2)))
+
+print("The Arrays Horizontal Concatenated")
+print(np.hstack((num1,num2)))
+
+
