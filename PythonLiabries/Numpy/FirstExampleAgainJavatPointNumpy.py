@@ -47,4 +47,30 @@ print(num2.shape)
 print("The Size Of THe Array is ") # Size Means The Number Of The Element In The Array is Called as Size
 print(num2.size)
 
-# Reshaping The array 
+# Reshaping Of The array Means That You are changing the  Row & Columns Into the COlumns And Rows
+
+reshape = numpy.array([[1,2],[3,4],[5,6]])
+print("The Reshaping of The Array ")
+print(reshape)
+print("The Dimension Of The Array is ")
+print(reshape.ndim)
+
+print("The Size of The Array is ")
+print(reshape.size)
+
+print("The Shape Of The Array is ")
+print(reshape.shape)
+
+
+#Slicing In The Numpy array
+
+slicing = numpy.array([[1,2],[3,4],[5,6]])
+print("The Slicing of The Array is ")
+print(slicing)
+
+print("Printing the Some Element Of The Array is ")
+print(slicing[0,1])
+print("again Printing the Some Element Of The Array is ")
+print(slicing[2,0])
+
+
