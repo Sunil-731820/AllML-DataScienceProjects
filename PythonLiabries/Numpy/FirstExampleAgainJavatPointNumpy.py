@@ -74,3 +74,23 @@ print("again Printing the Some Element Of The Array is ")
 print(slicing[2,0])
 
 
+# The USe Of The linSpace That Means it returns the evenly Spaced values Over The given interval .
+# i am  going to print The 10 Values Which is Equally Spaced Between 5 and 15 Which Includes The initial And final values Of The ranges In LinSpaces
+
+linSpace = numpy.linspace(5,15,10)
+print("The Lin Space values are ")
+print(linSpace)
+
+# finding The Maximum and Minimum Values Of The Array Elements are:
+
+maximum = numpy.array([1,2,3,10,15,4])
+print("The maximum Array is ")
+print(maximum)
+print("The maximum Values is ")
+print(maximum.max())
+
+minimum = numpy.array([1,2,3,10,15,4])
+print("The Array is ")
+print(minimum)
+print("The Minimum Values Of The array is ")
+print(minimum.min())
