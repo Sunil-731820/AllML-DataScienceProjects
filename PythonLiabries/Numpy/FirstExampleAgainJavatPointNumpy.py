@@ -166,3 +166,18 @@ print("The Division of The two Array is ")
 print(firstArray/secondArray)
 
 
+# The Array Concatenation
+#this numpy provides us with the vertical Stacking and horizontal stacking which allows to concatenate two Multi Dimensional Array Either vertically or Horizontally
+
+firstArratConcate = numpy.array([[1,2,30],[10,15,4]])
+secondArrayConcate = numpy.array([[1,2,3],[12,19,29]])
+print("The First Arrays is ")
+print(firstArratConcate)
+print("The Second Array is ")
+print(secondArrayConcate)
+
+print("After Concatening The Array Horizontally using numpy.stack()")
+print(numpy.hstack((firstArratConcate,secondArrayConcate)))
+
+print("After Concatening The Array vertically using numpy.stack()")
+print(numpy.vstack((firstArratConcate,secondArrayConcate)))
