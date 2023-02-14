@@ -94,3 +94,47 @@ print("The Array is ")
 print(minimum)
 print("The Minimum Values Of The array is ")
 print(minimum.min())
+
+
+# Finding  the Minimum and Maximum values In  Numpy Array In Two Dimensional Array
+maximumValuesIntwoDim = numpy.arange(10).reshape(2,5)
+print("The Maximum values Of The Two Dimensional array is ")
+print(maximumValuesIntwoDim)
+print(numpy.max(maximumValuesIntwoDim))
+
+#The Minimum Values In The two Dimensional array is
+
+minimumValuesInTwoDim = numpy.arange(20).reshape(4,5)
+print("The Array is ")
+print(minimumValuesInTwoDim)
+print("The Size Of The Array is ")
+print(numpy.size(minimumValuesInTwoDim))
+print("The Shape of The Two Dim Array is ")
+print(numpy.shape(minimumValuesInTwoDim))
+print("The Minimum Values in The two Dim array is ")
+print(numpy.min(minimumValuesInTwoDim))
+
+# finding the minimum Values in The Row Wise of The Array is
+#if you are using axis = 1 then It is called as Row Wise and If axis = 0 called as column Wise
+
+print("The Minimum Element of The Row Wise is ")
+print(numpy.min(minimumValuesInTwoDim,axis=1))
+
+#Finding The maximum values In The column Wise Of The Array is
+print("The Maximum ElemenT of The Array using The Row Wise Is ")
+print(numpy.max(maximumValuesIntwoDim,axis=0))
+
+#Find The Sum Of The All The Rows
+
+sumOfAllRow = numpy.array([[1,2,30],[10,15,4]])
+print("The Sum of all rows is ")
+print(sumOfAllRow)
+print("The SUm Of The Array in Row Wise Is ")
+print(sumOfAllRow.sum(axis=1))
+print('The Sum of The Array in Column Wise is ')
+print(sumOfAllRow.sum(axis=0))
+
+# Finding The Square root and Standard Deviations
+SquareRootOfTheArray = numpy.array([[1,2,30],[10,15,4]])
+print("The Square Root Of The array is ")
+print(numpy.sqrt(SquareRootOfTheArray))
