@@ -138,3 +138,31 @@ print(sumOfAllRow.sum(axis=0))
 SquareRootOfTheArray = numpy.array([[1,2,30],[10,15,4]])
 print("The Square Root Of The array is ")
 print(numpy.sqrt(SquareRootOfTheArray))
+
+#Finding The Standard Deviation Is :
+
+standardDeviationOfTheArray = numpy.array([[1,2,30],[10,15,4]])
+print("The Array is ")
+print(standardDeviationOfTheArray)
+print("The Standard Deviations Is ")
+print(numpy.std(standardDeviationOfTheArray))
+
+# AritheMatic Operation On The Numpy Array is :
+
+firstArray = numpy.array([[1,2,30],[10,15,4]])
+secondArray = numpy.array([[1,2,3],[12,19,29]])
+print("The first Array is ")
+print(firstArray)
+print("The Second Array is ")
+print(secondArray)
+
+print("The Sum of The Array is ")
+print(firstArray+secondArray)
+
+print("The Multiplication Of The Array is ")
+print(firstArray*secondArray)
+
+print("The Division of The two Array is ")
+print(firstArray/secondArray)
+
+
