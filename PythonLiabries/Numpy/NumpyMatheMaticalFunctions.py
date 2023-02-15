@@ -81,7 +81,33 @@ print("after Appending The Rows Wise is ")
 print(rowWiseAppending)
 
 
-# The Use Of The
+# The Use Of The sum() in The Numpy Array is :
+
+sumOfFirstArray = numpy.array([0.4,0.5,0.9,6.1])
+print("The Given array is  ")
+print(sumOfFirstArray)
+print("The Sum of The first array is ")
+print(numpy.sum(sumOfFirstArray))
+
+# adding  two Dimnensional Array
+
+firstArray2 = numpy.array([[1,4],[3,5]])
+print("The first array is ")
+print(firstArray2)
+print("The Sum of The two Dim Array is ")
+print(numpy.sum(firstArray2))
+
+# The use of The numpy.zeroes()
+firstZeroes = numpy.zeros(6)
+print("The First Zero is ")
+print(firstZeroes)
+
+# Creating the array of The Zeroes With 6 Row and 2 Columns
+
+sixRowAndTwoColumns = numpy.zeros((6,2))
+print("The Array is ")
+print(sixRowAndTwoColumns)
+
 
 
 
