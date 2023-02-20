@@ -1,3 +1,4 @@
+import numpy
 import  pandas as pd
 x = pd.Series()
 print("The First Series is ")
@@ -90,4 +91,6 @@ print("The Size Of The First Series is ")
 print(d.size)
 print("The Size of The Second Series is ")
 print(e.size)
-
+Arr = numpy.array([1,2,3,4,5])
+print('The Size Of The Array is ')
+print(Arr)
