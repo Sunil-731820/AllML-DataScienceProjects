@@ -13,3 +13,7 @@ print(info)
 df = pd.DataFrame(info)
 print("The data Frame is ")
 print(df)
+index = ["John","Parker","Smith","William"]
+print(info)
+print(info["data1"].sample(n=3,random_state=1))
+
