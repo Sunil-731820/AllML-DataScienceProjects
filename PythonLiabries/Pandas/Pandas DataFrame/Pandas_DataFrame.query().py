@@ -11,4 +11,7 @@ info = pd.DataFrame(
 print("The info is ")
 print(info)
 print(info.query("X > Y"))
+print("The use of The ==")
+print(info.Y==info['Z Z'])
+
 
