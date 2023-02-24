@@ -11,3 +11,4 @@ info = pd.DataFrame(
 print("The info is ")
 print(info)
 print(info.query("X > Y"))
+
