@@ -30,6 +30,6 @@ def secondPlot():
     plt.subplot(133)
     plt.plot(names, marks)
     plt.suptitle('Categorical Plotting')
-    plt.show()  
+    plt.show()
 
 secondPlot()
