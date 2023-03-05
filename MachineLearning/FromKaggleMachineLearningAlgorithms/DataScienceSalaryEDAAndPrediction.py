@@ -45,6 +45,5 @@ for col in df.columns:
     print("++++++++++++++")
     print(df[col].value_counts())
 
-# Now plotting The Work Experinces In Graph
-
-sns.di
+# Now plotting The Work Experiences In Graph
+print(sns.displot(df["work_year"]))
