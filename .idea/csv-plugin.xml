@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\DataScience\WorldCupData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\FromKaggleMachineLearningAlgorithms\Cleaned-Data.csv">
           <value>
             <Attribute>
