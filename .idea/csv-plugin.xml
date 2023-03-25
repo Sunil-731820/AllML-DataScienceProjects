@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\DataScience\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\FromKaggleMachineLearningAlgorithms\Cleaned-Data.csv">
           <value>
             <Attribute>
