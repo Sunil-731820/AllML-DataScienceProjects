@@ -67,5 +67,11 @@ next_salary1 = linear_Reg.predict([[30]])
 print("The Salary of The person is ")
 print(next_salary1)
 
+# predict the Salary of The person having The Experience of 0.9 Month (Its Mine Experiences Sunil Kumar Gupta Salary predictions)
+sunil_Salary = linear_Reg.predict([[0.9]])
+print("The Sunil Salary is ")
+print(sunil_Salary)
+
+
 
 
