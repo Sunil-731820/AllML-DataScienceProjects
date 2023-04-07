@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MachineLearning\SuperVisedMachineLearningAlgorithms\LinearModelAlgorithmms\LinearRegresssionApplicationModel\infy_stock.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\SuperVisedMachineLearningAlgorithms\linear-regression-dataset.csv">
           <value>
             <Attribute>
