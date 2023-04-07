@@ -38,6 +38,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MachineLearning\FromKaggleMachineLearningAlgorithms\infy_stock.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\MachineLearning\FromKaggleMachineLearningAlgorithms\linear-regression-dataset.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\SuperVisedMachineLearningAlgorithms\Cleaned-Data.csv">
           <value>
             <Attribute>
