@@ -2,6 +2,7 @@ import  pandas as pd
 import  numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import  SVC
+import  matplotlib.pyplot as plt
 
 # 1: Load The Iris Data Sets using pandas Liabries
 df  = pd.read_csv("IRIS.csv")
@@ -34,5 +35,16 @@ model.fit(X_train,y_train)
 accuracy = model.score(X_test,y_test)
 print("The Accuracy of The Model is ")
 print(accuracy*100)
+
+# Drawing The Graph Between X Test and y Test
+X_axis = df['sepal_length'][0]
+print("The X axis is ")
+print(X_axis)
+Y_axis = df['sepal_width'][0]
+print("The y Axis is ")
+print(Y_axis)
+
+plt.plot(X_axis,Y_axis)
+plt.show()
 
 
