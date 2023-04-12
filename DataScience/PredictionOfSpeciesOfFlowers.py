@@ -18,7 +18,7 @@ print("The Value Of The Y is called as The labels")
 print(y)
 
 
-# 3 : Splitting the Data into The Tranaining and Testing sets
+# 3 : Splitting the Data into The Trainining and Testing sets
 
 X_train , X_test , y_train , y_test = train_test_split(x,y,test_size=0.2,random_state=42)
 print("The X Trains parts is : " ,X_train)
