@@ -39,9 +39,9 @@ print(y)
 
 from sklearn.preprocessing import StandardScaler
 ss = StandardScaler()
-x_features = ss.fit_transform(x)
+# x_features = ss.fit_transform(x)
 print("The X features is ")
-print(x_features)
+
 
 
 
