@@ -81,6 +81,6 @@ plt1.set(xlabel = 'Engine Type', ylabel='Frequency of Engine type')
 plt.show()
 
 # When You Are going to Run The Above plot then You Will Saw that mostly
-# Volkswagen is prefered than other cars.
+# Volkswagen is preferred than other cars.
 # Sedan seems to be the popular type.
 # Vehicles with gasoline are preffered.
