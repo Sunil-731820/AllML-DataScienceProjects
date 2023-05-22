@@ -31,6 +31,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\DataScience\covid19DataAnanlysis.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\DataScience\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\DataScience\seattle-weather.csv">
           <value>
             <Attribute>
