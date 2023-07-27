@@ -74,7 +74,7 @@ columns_category = ['experience_level']
 for column in columns_category:
     df = category_to_column(df, column)
 df = df.drop(columns=columns_category)
-print("Aftre The USe of The drop()")
+print("After The USe of The drop()")
 print(df.head())
 df = df.drop(['job_title', 'salary', 'salary_currency', 'employee_residence', 'company_location'], axis=1)
 print("The Data Frame is ")
@@ -85,10 +85,10 @@ print(df.head(10))
 from sklearn import linear_model
 
 reg = linear_model.LinearRegression()
-
+print("The Value Of The Reg is " , reg)
 X = df.drop(['salary_in_usd'], axis=1)
 y = df['salary_in_usd']
-
+print("The Value of The Y is ", y )
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
