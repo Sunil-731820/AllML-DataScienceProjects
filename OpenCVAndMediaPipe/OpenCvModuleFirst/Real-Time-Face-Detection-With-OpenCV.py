@@ -11,7 +11,7 @@ def detect_bounding_box(vid):
     faces = face_classifier.detectMultiScale(gray_image, 1.1, 5, minSize=(40, 40))
     for (x, y, w, h) in faces:
         cv2.rectangle(vid, (x, y), (x + w, y + h), (0, 255, 0), 4)
-    return faces   
+    return faces
 while True:
 
     result, video_frame = video_capture.read()  # read frames from the video
