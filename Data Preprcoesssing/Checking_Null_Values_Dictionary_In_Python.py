@@ -79,7 +79,7 @@ print(df5)
 # Now we are going to replace the all Nan value in the data frame with -99 value.
 import numpy as np
 df6 = pd.read_csv("employees.csv")
-print("The data rame is : ")
+print("The data frame is : ")
 print(df6)
 
 df6.replace(to_replace = np.nan, value = -99)
