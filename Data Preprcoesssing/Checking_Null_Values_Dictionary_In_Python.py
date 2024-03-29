@@ -72,7 +72,7 @@ print(df5)
 
 # Filling The Gender Which is Having no values With No gender Values
 
-print(df5['Gender'].fillna("No Gender" , inplace=True))
+(df5['Gender'].fillna("No Gender" , inplace=True))
 print("After Filling The No Values With user Given Data Values  ")
 print(df5)
 
