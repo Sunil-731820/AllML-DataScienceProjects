@@ -62,7 +62,7 @@ print(goalCounter[:])
 
 # Plotting The Goal COunter Using MatPlotlib
 plt.bar(*zip(*goalCounter[-15:]))
-plt.xticks(rotation=90)
+plt.xticks(rotation=90) 
 plt.show()
 
 
