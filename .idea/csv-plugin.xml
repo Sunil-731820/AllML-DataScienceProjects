@@ -24,7 +24,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\DataScience\INDIAVIX.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\DataScience\IRIS.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\DataScience\NIFTY 50.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
