@@ -73,6 +73,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Machine Learning\MachineLearningProjects\salary_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\FromKaggleMachineLearningAlgorithms\Cleaned-Data.csv">
           <value>
             <Attribute>

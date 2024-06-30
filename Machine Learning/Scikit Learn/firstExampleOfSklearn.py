@@ -13,3 +13,4 @@ prediction = model.predict([[15,86]])[0]
 
 print("The Value of the prediction is : =")
 print(prediction)
+
