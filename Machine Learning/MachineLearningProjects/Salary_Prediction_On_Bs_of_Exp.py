@@ -39,3 +39,4 @@ print(f"Coefficient: {model.coef_[0]}")
 years_of_experience = 3.7
 predicted_salary = model.predict([[years_of_experience]])
 print(f"Predicted salary for {years_of_experience} years of experience: {predicted_salary[0]}")
+
