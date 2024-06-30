@@ -84,6 +84,8 @@ plt.show()
 # 6 : Volume : 3500000
 
 # Commented By Sunil below code Because of Date is not able to convert into the String into Numbers format
+# usergivenDate = 2023-01-01
+
 '''
 
 usergivenDate = '2023-01-01'
@@ -91,12 +93,12 @@ usergivenDate = '2023-01-01'
 timestamp_int = int(usergivenDate.timestamp())
 # Convert the datetime object to a timestamp
 print("The timestamp_int is :",timestamp_int)
+'''
 openValue = 135.67
 HighValue = 137.50
 Low = 134.89
 Volume = 3500000
 
-predcitedStockValue = model.predict([[usergivenDate,openValue,HighValue,Low,Volume]])
+predcitedStockValue = model.predict([[openValue,HighValue,Low,Volume]])
 print("The predicted Stock value is ")
 print(predcitedStockValue)
-'''

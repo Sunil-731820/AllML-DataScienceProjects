@@ -62,9 +62,9 @@ plt.show()
 # Number of the bedrooms = 3
 # Number of The bathrooms = 3
 
-sizeOfEmployeeRoom = 1400
-numberOfBedRooms = 3
-numberOfBathrooms = 2
+sizeOfEmployeeRoom = 2350
+numberOfBedRooms = 4
+numberOfBathrooms = 3
 
 predictedPrice = model.predict([[sizeOfEmployeeRoom,numberOfBedRooms,numberOfBathrooms]])
 print("The Predcited Price for that employee room size ")
