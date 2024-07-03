@@ -150,6 +150,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Nifty50DataAnalysisAndPredictions\nifty50AllDatasets.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
