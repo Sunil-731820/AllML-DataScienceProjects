@@ -63,3 +63,13 @@ def predict_email(text):
 # Example new email
 new_email = "Congratulations! You've won a free lottery ticket. Click here to claim your prize."
 print("Prediction for the new email:", predict_email(new_email))
+
+# Again predicting the New EMail is
+msg = "This is cow"
+print("The New prediction is : ",predict_email(msg))
+
+# Again Doing the Same Things
+
+userInputMsg = "SIX chances to win CASH! From 100 to 20"
+print("The new Prediction is :",predict_email(userInputMsg))
+
