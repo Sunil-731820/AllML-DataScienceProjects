@@ -143,6 +143,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MachineLearning\SuperVisedMachineLearningAlgorithms\LinearModelAlgorithmms\LogisticRegressionApplicationModel\DiseasepredictionData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MachineLearning\SuperVisedMachineLearningAlgorithms\linear-regression-dataset.csv">
           <value>
             <Attribute>

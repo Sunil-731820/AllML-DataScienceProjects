@@ -7,12 +7,12 @@ from sklearn.metrics import  classification_report,accuracy_score,confusion_matr
 import seaborn as sns
 
 # First Laod the using the CSv files
-
+# csvdata = pd.read_csv("DiseasepredictionData.csv")
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
 column_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 data = pd.read_csv(url, names=column_names)
 print("The data is ")
-print(data)
+print(url)
 
 # Display the first few rows of the dataset
 print(data.head())
@@ -78,4 +78,17 @@ print("The value of the new_patient_proba is :",new_patient_proba)
 
 print("Prediction for the new patient:", "Diabetes" if new_patient_pred[0] == 1 else "No Diabetes")
 print("Probability of each class (No Diabetes, Diabetes):", new_patient_proba[0])
+
+# let me check for one More data here
+new_patientData = np.array([[
+4,110,92,0,0,37.6,0.191,30
+]])
+
+new_predictedvalue = logreg.predict(new_patientData)
+new_Patient_proba1 = logreg.predict_proba(new_patientData)
+print("The New Predicted Value is ",new_predictedvalue)
+print("The new probability value is :",new_Patient_proba1)
+
+print("The prediction for the new patient :","Diebetes" if new_predictedvalue[0]==1 else "Patient Does Not have Any Diebetes")
+
 
