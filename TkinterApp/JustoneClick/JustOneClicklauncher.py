@@ -208,13 +208,31 @@ def insert_items():
 load_apps()
 insert_items()
 
+style = ttk.Style()
+style.theme_use('clam')  # good base theme
+
+# Customize TButton
+style.configure('Custom.TButton',
+                font=('Segoe UI', 11, 'bold'),
+                foreground='white',
+                background='#0078d7',
+                padding=10,
+                borderwidth=0,
+                focusthickness=3,
+                focuscolor='none')
+
+style.map('Custom.TButton',
+          foreground=[('pressed', 'white'), ('active', 'white')],
+          background=[('pressed', '#005a9e'), ('active', '#1a85ff')])
+
+
 button_frame = ttk.Frame(root)
 button_frame.pack(pady=15)
 
-ttk.Button(button_frame, text="➕ Add App/URL", command=add_app).grid(row=0, column=0, padx=6, pady=4)
-ttk.Button(button_frame, text="❌ Remove Selected", command=remove_selected).grid(row=0, column=1, padx=6)
-ttk.Button(button_frame, text="🚀 Launch Selected", command=launch_selected).grid(row=0, column=2, padx=6)
-ttk.Button(button_frame, text="⚡ Launch All", command=launch_all_apps).grid(row=1, column=0, padx=6, pady=6)
-ttk.Button(button_frame, text="🔑 Reset PIN", command=reset_pin).grid(row=1, column=1, padx=6)
+ttk.Button(button_frame, text="➕ Add App/URL",style='Custom.TButton', command=add_app).grid(row=0, column=0, padx=6, pady=4)
+ttk.Button(button_frame, text="❌ Remove Selected",style='Custom.TButton', command=remove_selected).grid(row=0, column=1, padx=6)
+ttk.Button(button_frame, text="🚀 Launch Selected",style='Custom.TButton', command=launch_selected).grid(row=0, column=2, padx=6)
+ttk.Button(button_frame, text="⚡ Launch All",style='Custom.TButton', command=launch_all_apps).grid(row=1, column=0, padx=6, pady=6)
+ttk.Button(button_frame, text="🔑 Reset PIN",style='Custom.TButton', command=reset_pin).grid(row=1, column=1, padx=6)
 
 root.mainloop()
