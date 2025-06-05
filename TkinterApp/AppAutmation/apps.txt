@@ -10,3 +10,5 @@ C:/Program Files/Git/git-bash.exe
 C:/Program Files/MySQL/MySQL Workbench 8.0 CE/cairo.py
 C:/Program Files/MySQL/MySQL Workbench 8.0 CE/mysql.exe
 C:/Program Files/MySQL/MySQL Workbench 8.0 CE/MySQLWorkbench.exe
+F:/Testing App launcher Apps/Test1.txt
+F:/Testing App launcher Apps/test3.txt
