@@ -74,14 +74,7 @@ def launch_all_apps():
         except Exception as e:
             messagebox.showerror("Launch Error", f"Error launching {app_path}:\n{str(e)}")
 
-# Export app list
-def export_list():
-    export_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
-    if export_path:
-        with open(export_path, "w") as f:
-            for app in app_list:
-                f.write(app + "\n")
-        messagebox.showinfo("Export Complete", "App list exported successfully.")
+
 
 # PIN handling
 def load_pin():
@@ -97,10 +90,16 @@ def save_pin(pin):
 def prompt_for_pin():
     saved_pin = load_pin()
     if saved_pin:
-        entered_pin = simpledialog.askstring("PIN Required", "Enter your PIN:", show="*")
-        if entered_pin != saved_pin:
-            messagebox.showerror("Access Denied", "Incorrect PIN. Exiting app.")
-            root.destroy()
+        while True:
+            entered_pin = simpledialog.askstring("PIN Required", "Enter your PIN:", show="*")
+            if entered_pin is None:
+                if messagebox.askyesno("Exit", "Do you want to exit the app?"):
+                    root.destroy()
+                    return
+            elif entered_pin == saved_pin:
+                break
+            else:
+                messagebox.showerror("Access Denied", "Incorrect PIN. Please try again.")
     else:
         while True:
             new_pin = simpledialog.askstring("Set a PIN", "Create a 5–10 digit PIN:", show="*")
@@ -122,7 +121,7 @@ def reset_pin():
 # UI Setup
 root = tk.Tk()
 root.title("Just One Click App Launcher")
-root.geometry("600x400")
+root.geometry("600x500")
 
 prompt_for_pin()
 load_apps()
@@ -137,7 +136,6 @@ tk.Button(root, text="Add App", command=add_app).pack(pady=2)
 tk.Button(root, text="Remove Selected", command=remove_selected).pack(pady=2)
 tk.Button(root, text="Launch Selected", command=launch_selected).pack(pady=2)
 tk.Button(root, text="Launch All Apps", command=launch_all_apps, bg="#4CAF50", fg="white").pack(pady=5)
-# tk.Button(root, text="Export List", command=export_list).pack(pady=2)
 tk.Button(root, text="Reset PIN", command=reset_pin).pack(pady=2)
 
 root.mainloop()
