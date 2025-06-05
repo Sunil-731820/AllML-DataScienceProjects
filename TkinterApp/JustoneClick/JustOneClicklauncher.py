@@ -120,10 +120,12 @@ def reset_pin():
 
 # UI Setup
 root = tk.Tk()
+root.withdraw()  # Hide main window for PIN prompt
 root.title("Just One Click App Launcher")
 root.geometry("600x500")
 
 prompt_for_pin()
+root.deiconify()  # Show main window after PIN is accepted
 load_apps()
 
 listbox = tk.Listbox(root, width=80, height=15)
