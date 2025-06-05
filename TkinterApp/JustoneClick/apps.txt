@@ -4,7 +4,6 @@ F:/Testing App launcher Apps/Testing.ppt
 F:/Testing App launcher Apps/Testiing.accdb
 F:/Testing App launcher Apps/Testing.doc
 F:/ALL Machine Learning Model Algorithms/ListOfAllMachineLearningAlgorithms.txt
-F:/Testing App launcher Apps/1.txt
 F:/Testing App launcher Apps/2.txt
 F:/Testing App launcher Apps/3.txt
 F:/Testing App launcher Apps/4.txt
@@ -16,3 +15,4 @@ F:/Testing App launcher Apps/9.txt
 F:/Testing App launcher Apps/10.txt
 F:/Testing App launcher Apps/11.txt
 F:/Testing App launcher Apps/12.txt
+https://numpy.org/doc/

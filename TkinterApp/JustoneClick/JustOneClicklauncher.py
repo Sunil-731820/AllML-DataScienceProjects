@@ -3,18 +3,17 @@ import subprocess
 import platform
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, simpledialog
+import webbrowser
 import json
 
-# Constants
 APP_LIST_FILE = "apps.txt"
 PIN_FILE_PATH = "C:\\AppLauncher\\app_pin.json"
+ICON_PATH = "app_icon.ico"
 
-# Ensure PIN directory exists
 os.makedirs(os.path.dirname(PIN_FILE_PATH), exist_ok=True)
 
 app_list = []
 
-# --- App Logic ---
 def load_apps():
     global app_list
     if os.path.exists(APP_LIST_FILE):
@@ -27,11 +26,28 @@ def save_apps():
             f.write(app + "\n")
 
 def add_app():
-    file_path = filedialog.askopenfilename()
-    if file_path and file_path not in app_list:
-        app_list.append(file_path)
-        listbox.insert(tk.END, file_path)
-        save_apps()
+    # Allow adding URL or file path
+    choice = messagebox.askquestion("Add App or URL", "Do you want to add a URL? Click 'No' to add an application/executable file.")
+    if choice == "yes":
+        url = simpledialog.askstring("Add URL", "Enter the full URL (including http:// or https://):")
+        if url and (url.startswith("http://") or url.startswith("https://")):
+            if url not in app_list:
+                app_list.append(url)
+                listbox.insert(tk.END, url)
+                save_apps()
+            else:
+                messagebox.showinfo("Duplicate", "This URL is already in the list.")
+        else:
+            messagebox.showerror("Invalid URL", "Please enter a valid URL starting with http:// or https://")
+    else:
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            if file_path not in app_list:
+                app_list.append(file_path)
+                listbox.insert(tk.END, file_path)
+                save_apps()
+            else:
+                messagebox.showinfo("Duplicate", "This app is already in the list.")
 
 def remove_selected():
     selected_indices = listbox.curselection()
@@ -43,34 +59,37 @@ def remove_selected():
 def launch_selected():
     selected_indices = listbox.curselection()
     for index in selected_indices:
-        app_path = app_list[index]
-        _launch_app(app_path)
+        item = app_list[index]
+        launch_item(item)
 
 def launch_all_apps():
-    for app_path in app_list:
-        _launch_app(app_path)
+    for item in app_list:
+        launch_item(item)
 
-def _launch_app(app_path):
-    try:
-        if os.path.exists(app_path):
-            if platform.system() == "Windows":
-                os.startfile(app_path)
-            elif platform.system() == "Darwin":
-                subprocess.Popen(["open", app_path])
+def launch_item(item):
+    if item.startswith("http://") or item.startswith("https://"):
+        # Open URL in default browser
+        try:
+            webbrowser.open(item)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to open URL:\n{item}\n\n{e}")
+    else:
+        # Launch executable or file
+        try:
+            if os.path.exists(item):
+                if platform.system() == "Windows":
+                    os.startfile(item)
+                elif platform.system() == "Darwin":
+                    subprocess.Popen(["open", item])
+                else:
+                    subprocess.Popen(["xdg-open", item])
             else:
-                subprocess.Popen(["xdg-open", app_path])
-    except Exception as e:
-        messagebox.showerror("Launch Error", f"Could not launch:\n{app_path}\n\n{e}")
+                messagebox.showerror("Error", f"File not found:\n{item}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to launch:\n{item}\n\n{e}")
 
-def export_list():
-    export_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
-    if export_path:
-        with open(export_path, "w") as f:
-            for app in app_list:
-                f.write(app + "\n")
-        messagebox.showinfo("Export Complete", "App list exported successfully.")
 
-# --- PIN Functions ---
+
 def load_pin():
     if os.path.exists(PIN_FILE_PATH):
         with open(PIN_FILE_PATH, "r") as f:
@@ -111,12 +130,13 @@ def reset_pin():
             os.remove(PIN_FILE_PATH)
         prompt_for_pin()
 
-# --- Splash Screen ---
 def show_splash():
     splash = tk.Toplevel()
-    splash.title("Welcome")
+    splash.title("🚀 Welcome")
     splash.geometry("400x200")
     splash.configure(bg="#1e1e1e")
+    if os.path.exists(ICON_PATH):
+        splash.iconbitmap(ICON_PATH)
     splash_label = tk.Label(splash, text="🎉 Welcome to Just One Click App Launcher", font=("Arial", 14), bg="#1e1e1e", fg="white")
     splash_label.pack(expand=True)
     splash.update()
@@ -126,24 +146,22 @@ def show_splash():
 root = tk.Tk()
 root.withdraw()
 
-# Show splash
-show_splash()
+if os.path.exists(ICON_PATH):
+    root.iconbitmap(ICON_PATH)
 
-# After splash, show PIN
+show_splash()
 root.after(2500, lambda: [prompt_for_pin(), root.deiconify()])
 
-root.title("Just One Click App Launcher")
+root.title("🚀 Just One Click App Launcher")
 root.geometry("650x450")
 root.configure(bg="#2d2d2d")
 
-# Dark theme with ttk
 style = ttk.Style()
 style.theme_use("clam")
 style.configure("TButton", foreground="white", background="#3c3f41", padding=6, font=("Segoe UI", 10))
 style.configure("TLabel", background="#2d2d2d", foreground="white")
 style.configure("TFrame", background="#2d2d2d")
 
-# Listbox with dark mode
 listbox_frame = ttk.Frame(root)
 listbox_frame.pack(pady=10)
 
@@ -158,15 +176,13 @@ load_apps()
 for app in app_list:
     listbox.insert(tk.END, app)
 
-# Buttons
 button_frame = ttk.Frame(root)
 button_frame.pack(pady=15)
 
-ttk.Button(button_frame, text="➕ Add App", command=add_app).grid(row=0, column=0, padx=6, pady=4)
+ttk.Button(button_frame, text="➕ Add App/URL", command=add_app).grid(row=0, column=0, padx=6, pady=4)
 ttk.Button(button_frame, text="❌ Remove Selected", command=remove_selected).grid(row=0, column=1, padx=6)
 ttk.Button(button_frame, text="🚀 Launch Selected", command=launch_selected).grid(row=0, column=2, padx=6)
-ttk.Button(button_frame, text="⚡ Launch All Apps", command=launch_all_apps).grid(row=1, column=0, padx=6, pady=6)
-ttk.Button(button_frame, text="📄 Export List", command=export_list).grid(row=1, column=1, padx=6)
+ttk.Button(button_frame, text="⚡ Launch All", command=launch_all_apps).grid(row=1, column=1, padx=6, pady=6)
 ttk.Button(button_frame, text="🔑 Reset PIN", command=reset_pin).grid(row=1, column=2, padx=6)
 
 root.mainloop()
